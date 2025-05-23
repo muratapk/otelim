@@ -75,6 +75,10 @@
     <Content Include="Kategori\Delete.aspx" />
     <Content Include="Kategori\Edit.aspx" />
     <Content Include="Kategori\Index.aspx" />
+    <Content Include="Ozellik\Create.aspx" />
+    <Content Include="Ozellik\Delete.aspx" />
+    <Content Include="Ozellik\Edit.aspx" />
+    <Content Include="Ozellik\Index.aspx" />
     <Content Include="Uyelik\Create.aspx" />
     <Content Include="Uyelik\Delete.aspx" />
     <Content Include="Uyelik\Edit.aspx" />
@@ -137,6 +141,34 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Kategori\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ozellik\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ozellik\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ozellik\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ozellik\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ozellik\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ozellik\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ozellik\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ozellik\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Panel.Master.cs">

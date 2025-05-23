@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -27,6 +28,26 @@ namespace otelim
             {
                 conn.Close();
             }
+        }
+        public void Sorgu(string cumle,Dictionary<string,object> data)
+        {
+            SqlCommand cmd = new SqlCommand(cumle, this.conn);
+            cmd.Parameters.Clear();
+            foreach(var item in data)
+            {
+                cmd.Parameters.AddWithValue(item.Key, item.Value);  
+            }
+            this.On();
+            cmd.ExecuteNonQuery();
+            this.Off();
+        }
+        public DataTable Tablom(string cumle)
+        {
+            SqlCommand cmd = new SqlCommand(cumle, this.conn);
+            SqlDataAdapter da=new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
     }
 }
