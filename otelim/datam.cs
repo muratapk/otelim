@@ -49,5 +49,19 @@ namespace otelim
             da.Fill(dt);
             return dt;
         }
+        public DataTable TTablom(string cumle,Dictionary<string,object>data)
+        {
+            SqlCommand cmd = new SqlCommand(cumle, this.conn);
+            cmd.Parameters.Clear();
+            foreach(var item in data)
+            {
+                cmd.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
     }
 }
