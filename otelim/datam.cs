@@ -62,6 +62,18 @@ namespace otelim
             da.Fill(dt);
             return dt;
         }
+        public SqlDataReader TReader(string cumle,Dictionary<string,object>data)
+        {
+            this.On();
+            SqlCommand cmd=new SqlCommand(cumle,this.conn);
+            cmd.Parameters.Clear();
+            foreach(var item in data)
+            {
+                cmd.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            return cmd.ExecuteReader();
+            this.Off();
 
+        }
     }
 }

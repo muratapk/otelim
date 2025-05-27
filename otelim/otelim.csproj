@@ -75,6 +75,10 @@
     <Content Include="Kategori\Delete.aspx" />
     <Content Include="Kategori\Edit.aspx" />
     <Content Include="Kategori\Index.aspx" />
+    <Content Include="OtelResimler\Create.aspx" />
+    <Content Include="OtelResimler\Delete.aspx" />
+    <Content Include="OtelResimler\Edit.aspx" />
+    <Content Include="OtelResimler\Index.aspx" />
     <Content Include="Ozellik\Create.aspx" />
     <Content Include="Ozellik\Delete.aspx" />
     <Content Include="Ozellik\Edit.aspx" />
@@ -141,6 +145,34 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Kategori\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtelResimler\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtelResimler\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtelResimler\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtelResimler\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtelResimler\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtelResimler\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtelResimler\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtelResimler\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ozellik\Create.aspx.cs">
@@ -218,7 +250,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
