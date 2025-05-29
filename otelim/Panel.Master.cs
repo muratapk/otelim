@@ -11,7 +11,10 @@ namespace otelim
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Kullanici"]==null && Session["Sifre"]==null)
+            {
+                Response.Redirect("../Login/Index.aspx");
+            }
         }
     }
 }

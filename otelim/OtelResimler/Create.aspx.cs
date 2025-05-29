@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Web.WebSockets;
 
 namespace otelim.OtelResimler
 {
@@ -12,9 +13,16 @@ namespace otelim.OtelResimler
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string cumle = "select OtelId,OtelAdi from otel";
+            DropDownList1.DataSource = baglan.Tablom(cumle);
+            DropDownList1.DataTextField = "OtelAdi";
+            DropDownList1.DataValueField = "OtelId";
+            DropDownList1.DataBind();
+            
+
 
         }
-
+        datam baglan = new datam();
         protected void Button1_Click(object sender, EventArgs e)
         {
             if(FileUpload1.HasFile)
@@ -43,7 +51,13 @@ namespace otelim.OtelResimler
                 string filePath=Path.Combine(uploadPath,fileName);
                 //dosya full klasör/dosya/
                 FileUpload1.SaveAs(filePath);
-
+                string cumle = "insert into otelresimler (OtelId,ResimAdi,ResimYolu) values (@OtelId,@ResimAdi,@ResimYolu) ";
+                Dictionary<string, object> dic = new Dictionary<string, object>();
+                dic.Add("@ResimAdi", TextBox1.Text);
+                dic.Add("@ResimYolu", newName);
+                dic.Add("@OtelId", DropDownList1.SelectedValue);
+                baglan.Sorgu(cumle, dic);
+                Label1.Text = "Kayıt Yapıldı";
             }
             else
             {
